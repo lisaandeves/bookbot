@@ -10,3 +10,16 @@ def count_characters(text):
         character_dict[char.lower()] += 1
     
     return character_dict
+
+def sort_dictionary(dict):
+    sorted_dictionary = []
+    def sort_key(stuff):
+        return stuff["num"]
+
+    for key in dict:
+        if key.isalpha():
+            d = {"char" : key, "num" : dict[key]}
+            sorted_dictionary.append(d)
+
+    sorted_dictionary.sort(reverse=True, key=sort_key)
+    return sorted_dictionary
